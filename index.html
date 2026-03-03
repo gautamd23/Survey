@@ -1,142 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Do You Hate Me?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      margin-top: 80px;
-      background-color: #f0f8ff;
-    }
+  <meta charset="UTF-8">
+  <title>March 02</title>
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    #timer {
-      font-size: 20px;
-      margin-bottom: 30px;
-      color: #ff4500;
-      font-weight: bold;
-    }
-
-    .button-container {
-      position: relative;
-      height: 250px;
-      max-width: 100%;
-      margin: auto;
-    }
-
-    #yes-button, #no-button {
-      padding: 12px 25px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      position: absolute;
-      top: 50px;
-    }
-
-    #yes-button {
-      left: 25%;
-      background-color: #ff69b4;
-      color: white;
-      transition: all 0.05s ease;
-    }
-
-    #no-button {
-      left: 55%;
-      background-color: #ccc;
-    }
-
-    #message {
-      margin-top: 30px;
-      font-size: 22px;
-      color: #555;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      #yes-button, #no-button {
-        padding: 10px 18px;
-        font-size: 16px;
-      }
-      #yes-button { left: 15%; }
-      #no-button { left: 55%; }
-    }
-  </style>
-</head>
-<body>
-
-    <h1>Do you hate me? 💔</h1>
-    <p style="font-size: 18px; color: #aa0000; margin-bottom: 30px;">Don't you dare to click yes 😈</p>
-    
-  <div id="timer">Time left: 10s</div>
-
-  <div class="button-container">
-    <button id="yes-button" onmouseenter="moveYes()" ontouchstart="moveYes()">Yes</button>
-    <button id="no-button" onclick="noClicked()">No</button>
-  </div>
-
-  <div id="message"></div>
-
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZ21P0LD92"></script>
   <script>
-    const yesButton = document.getElementById("yes-button");
-    const timerEl = document.getElementById("timer");
-    const messageEl = document.getElementById("message");
-    let timeLeft = 10;
-    let timerInterval;
-    let gameOver = false;
-
-    function moveYes() {
-      if (gameOver) return;
-
-      const container = document.querySelector(".button-container");
-      const maxX = container.clientWidth - yesButton.offsetWidth;
-      const maxY = container.clientHeight - yesButton.offsetHeight;
-
-      const newX = Math.floor(Math.random() * maxX);
-      const newY = Math.floor(Math.random() * maxY);
-
-      yesButton.style.left = `${newX}px`;
-      yesButton.style.top = `${newY}px`;
-    }
-
-    function noClicked() {
-      if (gameOver) return;
-      gameOver = true;
-      clearInterval(timerInterval);
-      alert("Glad you don't hate me! 😅");
-      messageEl.textContent = "";
-    }
-
-    // Disable click on Yes
-    yesButton.addEventListener("click", function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-    });
-
-    // Timer
-    function startTimer() {
-      timerInterval = setInterval(() => {
-        if (timeLeft <= 0) {
-          clearInterval(timerInterval);
-          gameOver = true;
-          messageEl.style.color = "#ff4500";
-          messageEl.textContent = "You hate me this much! 😏";
-        } else {
-          timeLeft--;
-          timerEl.textContent = `Time left: ${timeLeft}s`;
-        }
-      }, 1000);
-    }
-
-    startTimer();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VZ21P0LD92');
   </script>
 
-</body>
-</html>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #1e1e2f, #2c2c54);
+      font-family: 'Georgia', serif;
+      color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 650px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .signature {
+      margin-top: 40px;
+      font-size: 18px;
+      opacity: 0.8;
+    }
+  </style>
+
+</head>
